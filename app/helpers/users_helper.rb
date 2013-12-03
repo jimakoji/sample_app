@@ -1,5 +1,5 @@
 module UsersHelper
-  DEFAULT_GRAVATAR_IMAGE_SIZE = 80
+  DEFAULT_GRAVATAR_IMAGE_SIZE = 40
 
   # 与えられたユーザーのGravatar (http://gravatar.com/) を返す。
   def gravatar_for(user, option={} )
