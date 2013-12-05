@@ -1,26 +1,17 @@
-<% content_for :javascript_includes do %>
-<%= javascript_include_tag "js_for_micropost.js" %>
-<% end %>
+/*
+*
+*   micropost character counter
+*
+*/
 
-<%= form_for(@micropost) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new micropost...", id: "post_field" %>
-  </div>
-
-  <span id ="count"> </span>
-
-  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
-
-<!--
-<script type="text/javascript">
-
+$(function(){
 if ($('#post_field').val().length == 0) {
       $('#count').html("140文字入力できます。" );
 }else{
       var n = 140 - $('#post_field').val().length;
       $('#count').html("あと" + n + "文字入力できます。" );
 }
+});
 
 $(function(){
     $('#post_field').bind('keydown keyup keypress change',function(){
@@ -29,7 +20,4 @@ $(function(){
         $('#count').html( str + thisValueLength + "文字入力できます。" );
     });
 });
-</script>
--->
 
-<% end %>

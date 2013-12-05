@@ -1,0 +1,18 @@
+
+function preCount(){
+if ($('#post_field').val().length == 0) {
+      $('#count').html("140•¶š“ü—Í‚Å‚«‚Ü‚·B" );
+}else{
+      var n = 140 - $('#post_field').val().length;
+      $('#count').html("‚ ‚Æ" + n + "•¶š“ü—Í‚Å‚«‚Ü‚·B" );
+}
+}
+
+function getCount(){
+    $('#post_field').bind('keydown keyup keypress change',function(){
+        var thisValueLength = 140 - $(this).val().length;
+        thisValueLength == 140? str = "" :str = "‚ ‚Æ"
+        $('#count').html( str + thisValueLength + "•¶š“ü—Í‚Å‚«‚Ü‚·B" );
+    });
+}
+
